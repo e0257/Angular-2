@@ -1,0 +1,12 @@
+
+<md-toolbar>
+  <button (click)="sidenav.toggle()" class="toolbar-button" md-mini-fab><md-icon>menu</md-icon></button>
+  <div class="toolbar-button-row">
+    <a href = "/" md-button *ngFor="let topLink of links" >
+      <md-icon>{{topLink.icon}}</md-icon> 
+       {{topLink.label}}
+    </a>
+  </div>
+  <span>Каталог фильмов</span>
+</md-toolbar>
+<app-film-card></app-film-card>
