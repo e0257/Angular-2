@@ -1,0 +1,21 @@
+.app-content {
+   margin: 50px auto; 
+   max-width: 884px;
+}
+.film-card {
+  max-width: 300px;
+  margin-bottom: 50px; 
+}
+.example-form {
+    margin-bottom: 50px;
+}
+
+.example-full-width{
+  margin-left: 45%;
+
+}
+
+:host{
+    padding-top: 10px;
+
+}
