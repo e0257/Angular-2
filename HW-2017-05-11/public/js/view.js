@@ -3,8 +3,9 @@
 
     function Gallery(items) {
         this.DOMElements = {
-            saveBtn: document.querySelector("#saveBtn"),
-            refreshBtn: document.querySelector("#refreshBtn"),
+           // saveBtn: document.querySelector("#saveBtn"),
+           // refreshBtn: document.querySelector("#refreshBtn"),
+
             //add
             searchInp: document.querySelector("#searchInp"),
             searchBtn: document.querySelector("#searchBtn"),
@@ -15,7 +16,7 @@
         this.counter = 0;
 
         this.eventHolder = $({});
-        this.updateEventName = "update";
+       // this.updateEventName = "update";
         this.init();
         //add
         this.searchEventName = "search";
@@ -37,13 +38,13 @@
                 item.name = "New name";
                 this.saveDefer.resolve(item);
             });*/
-            this.DOMElements.refreshBtn.addEventListener("click", () => {
+          /*  this.DOMElements.refreshBtn.addEventListener("click", () => {
                 this.eventHolder.trigger(this.updateEventName, [{ counter: this.counter++ }]);
-            });
+            });*/
 
             //add
             this.DOMElements.searchBtn.addEventListener("click", () => {
-                this.eventHolder.trigger(this.searchEventName, [{ counter: this.counter++ }]);
+                this.eventHolder.trigger(this.searchEventName, this.DOMElements.searchInp.value);
             });
         },
 

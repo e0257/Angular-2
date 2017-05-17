@@ -10,7 +10,7 @@
             })
         }
 
-        function saveData(item) {
+       /* function saveData(item) {
             console.log("Data successfuly saved: ");
             console.log(item);
         }
@@ -18,7 +18,8 @@
         function updateData(data) {
             console.log("Data successfuly updated: " + data.counter);
             console.log(data);
-        }
+        }*/
+
         //add
         function searchData(film) {
             return $.get(url + film, function (data) {
@@ -29,8 +30,8 @@
 
         return {
             getData: getData,
-            saveData: saveData,
-            updateData: updateData,
+           // saveData: saveData,
+           // updateData: updateData,
             searchData: searchData
         }
     }

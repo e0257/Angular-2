@@ -10,16 +10,16 @@
         });
     }*/
 
-    function bindUpdate() {
+    /*function bindUpdate() {
         gallery.eventHolder.on(gallery.updateEventName, (event, item) => {
             model.updateData(item);
         });
-    }
+    }*/
 
     //add
     function bindSearch() {
-        gallery.eventHolder.on(gallery.searchEventName, (event, item) => {
-            let searchFilm = gallery.DOMElements.searchInp.value;
+        gallery.eventHolder.on(gallery.searchEventName, (event, searchFilm) => {
+          //  let searchFilm = gallery.DOMElements.searchInp.value;
             model.searchData(searchFilm).then(films => {
                 console.log(films);
                 gallery.items = films;
@@ -32,18 +32,19 @@
 
     function bindEvents() {
         //bindSave();  
-        bindUpdate();
+        //bindUpdate();
+
         //add
         bindSearch();
     }
 
-    function initGallery(data) {
-        gallery = new Gallery(data);
+    function initGallery(films) {
+        gallery = new Gallery(films);
     }
 
     function init() {
-        model.getData().then((data) => {
-            initGallery(data);
+        model.getData().then((films) => {
+            initGallery(films);
             bindEvents();
         });
     }
