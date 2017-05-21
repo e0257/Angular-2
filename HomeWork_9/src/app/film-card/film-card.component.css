@@ -1,0 +1,10 @@
+.film-card {
+  max-width: 300px;
+  margin-bottom: 50px; 
+}
+
+img{
+  width: 300px;
+  height: 400px;
+  margin: 0 auto;
+}

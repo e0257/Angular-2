@@ -1,0 +1,17 @@
+<md-card class="film-card">
+	<md-card-header>
+		<md-card-title>{{filmItem.Title}}</md-card-title>
+	</md-card-header>
+	<img md-card-image src="{{filmItem.Poster}}">
+	<md-card-content>
+		<p>Релиз: {{filmItem.Released}}</p>
+		<p>{{filmItem.Plot}}</p>
+		<p>Жанр: {{filmItem.Genre}}</p>
+		<p>Рейтинг: {{filmItem.imdbRating}}</p>
+		<p>Режисер: {{filmItem.Director}}</p>
+		<p>Продолжительность: {{filmItem.Runtime}}</p>
+	</md-card-content>
+	<md-card-actions style="text-align:center">
+		<button md-button style = "background:lightblue">Подробнее</button>
+	</md-card-actions>
+</md-card>
