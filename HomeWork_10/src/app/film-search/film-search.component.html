@@ -1,0 +1,9 @@
+<md-input-container>
+      <input mdInput placeholder="Film name" [(ngModel)]='search'>
+</md-input-container>
+<button md-button (click)='searchFilm()'>Search</button>
+
+<md-select placeholder="View" [(ngModel)]="view" name="view" (change)='selectView()'>
+      <md-option [value]="'View 1'">view 1</md-option>
+      <md-option [value]="'View 2'">view 2</md-option>
+</md-select>
