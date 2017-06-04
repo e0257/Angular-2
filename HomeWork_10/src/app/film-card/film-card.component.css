@@ -1,0 +1,39 @@
+.film-card_v1{
+  max-width: 300px;
+  margin-bottom: 50px; 
+}
+
+img.img_v1{
+  max-height: 450px;
+  min-height: 450px;
+}
+
+.film-card_v2{
+  max-width: 450px;
+  height: 350px;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 50px; 
+  display:flex;
+  justify-content: space-around;
+  font-size: 12px;
+  border: 1px solid black;
+  box-sizing: border-box;
+}
+
+img.img_v2{
+  min-width: 200px;
+  max-width: 200px;
+  height: 350px;
+}
+
+.content_v2{
+  margin-left: 5px;
+  width: 250px;
+}
+
+.title{
+  display: block;
+  height: 40px ;
+}
+
