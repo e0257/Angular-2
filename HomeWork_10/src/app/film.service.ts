@@ -5,9 +5,10 @@ import { Film } from './int-film';
 
 @Injectable()
 export class FilmService {
-  curPage = 1;
+  private curPage = 1;
   searchUrl: string = `http://www.omdbapi.com/?apikey=520bbe17`;
   filmUrl: string = 'http://www.omdbapi.com/?apikey=520bbe17&i=';
+  film: Film;
 
   constructor(private http: Http) { }
 
@@ -18,20 +19,11 @@ export class FilmService {
 
   getPageFilms(filmName: string){
     this.curPage += 1;
-    console.log(this.curPage);
     return this.http.get(this.searchUrl+`&page=${this.curPage}&s=`+filmName).map((r: Response) => r.json().Search || []);
   }
 
   getFilmById(filmId: string) {
-    return this.http.get(this.filmUrl + filmId).map((r: Response) => <Film[]>r.json() ||
-      {
-        Released: '',
-        Plot: '',
-        Genre: '',
-        imdbRating: '',
-        Director: '',
-        Runtime: ''
-      });
+    return this.http.get(this.filmUrl + filmId).map((r: Response) => <Film[]>r.json() || this.film);
   }
 
 }

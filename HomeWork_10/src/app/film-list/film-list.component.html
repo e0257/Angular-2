@@ -5,6 +5,7 @@
 	</md-grid-tile>
 
 </md-grid-list>
-<button md-button *ngIf="filmList[0]" (click)="addFilms()">Еще фильмы</button>
+<button md-button *ngIf="filmList[0] && !loading" (click)="addFilms()">Еще фильмы</button>
 <div *ngIf="!filmList[0]">Фильмы не найдены</div>
+<img class='loading' src='assets/img/loading.gif' *ngIf="loading">
 

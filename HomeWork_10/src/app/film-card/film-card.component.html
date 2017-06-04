@@ -1,15 +1,15 @@
 <md-card class="film-card_v1" *ngIf="view === 'View 1'">
 	<img md-card-image class="img_v1" src="{{filmItem.Poster}}">
 	<md-card-header>
-		<md-card-title>{{filmItem.Title}}</md-card-title>
+		<md-card-title><b>{{filmItem.Title}}</b></md-card-title>
 	</md-card-header>
 	<md-card-content>
-		<p>Релиз: {{filmItem.Released}}</p>
+		<p><b>Релиз:</b> {{filmItem.Released}}</p>
 		<p>{{filmItem.Plot}}</p>
-		<p>Жанр: {{filmItem.Genre}}</p>
-		<p>Рейтинг: {{filmItem.imdbRating}}</p>
-		<p>Режисер: {{filmItem.Director}}</p>
-		<p>Продолжительность: {{filmItem.Runtime}}</p>
+		<p><b>Жанр:</b> {{filmItem.Genre}}</p>
+		<p><b>Рейтинг:</b> {{filmItem.imdbRating}}</p>
+		<p><b>Режисер:</b> {{filmItem.Director}}</p>
+		<p><b>Продолжительность:</b> {{filmItem.Runtime}}</p>
 	</md-card-content>
 	<md-card-actions style="text-align:center">
 		<button md-button>Подробнее</button>
@@ -18,16 +18,18 @@
 
 
 
-<div  class="film-card_v2" *ngIf="view === 'View 2'">
-	<img  class="img_v2" src="{{filmItem.Poster}}">
+<div class="film-card_v2" *ngIf="view === 'View 2'">
+	<img class="img_v2" src="{{filmItem.Poster}}">
 	<div class="content_v2">
-		<h3>{{filmItem.Title}}</h3>
-		<p>Релиз: {{filmItem.Released}}</p>
+		<div class="title">
+			<h2>{{filmItem.Title}}</h2>
+		</div>
+		<p><b>Релиз:</b> {{filmItem.Released}}</p>
 		<p>{{filmItem.Plot}}</p>
-		<p>Жанр: {{filmItem.Genre}}</p>
-		<p>Рейтинг: {{filmItem.imdbRating}}</p>
-		<p>Режисер: {{filmItem.Director}}</p>
-		<p>Продолжительность: {{filmItem.Runtime}}</p>
+		<p><b>Жанр:</b> {{filmItem.Genre}}</p>
+		<p><b>Рейтинг:</b> {{filmItem.imdbRating}}</p>
+		<p><b>Режисер:</b> {{filmItem.Director}}</p>
+		<p><b>Продолжительность:</b> {{filmItem.Runtime}}</p>
 		<md-card-actions style="text-align:center">
 			<button md-button>Подробнее</button>
 		</md-card-actions>

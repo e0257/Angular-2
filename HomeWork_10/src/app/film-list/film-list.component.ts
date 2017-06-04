@@ -11,6 +11,7 @@ export class FilmListComponent implements OnInit {
 
   filmList: Film[] = [];
   filmName: string;
+  loading: boolean = false;
   viewCurrent: string = 'View 1';
   rowHeightCurrent: string = '850px';
   constructor(private filmCardService: FilmService) { }
@@ -38,16 +39,20 @@ export class FilmListComponent implements OnInit {
   }
 
   private getFilms() {
+    this.loading = true;
     if (!this.filmName) { return; }
     this.filmCardService.getFilms(this.filmName).subscribe(filmList => {
       this.filmList = filmList;
+      this.loading = false;
     })
   }
 
   private addFilms() {
+    this.loading = true;
     if (!this.filmName) { return; }
     this.filmCardService.getPageFilms(this.filmName).subscribe(filmList => {
       this.filmList = this.filmList.concat(filmList);
+      this.loading = false;
     })
   }
 }
