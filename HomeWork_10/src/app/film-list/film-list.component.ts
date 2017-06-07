@@ -31,29 +31,31 @@ export class FilmListComponent implements OnInit {
     this.setRowHight(view);
   }
 
- private setRowHight(view){
-    if(view == 'View 1'){
-    this.rowHeightCurrent = '800px';}
-    if(view == 'View 2'){
-    this.rowHeightCurrent = '400px';}
+  private setRowHight(view) {
+    if (view == 'View 1') {
+      this.rowHeightCurrent = '800px';
+    }
+    if (view == 'View 2') {
+      this.rowHeightCurrent = '400px';
+    }
   }
 
   private getFilms() {
     this.loading = true;
     if (!this.filmName) { return; }
-    this.filmCardService.getFilms(this.filmName).subscribe(filmList => {
-      this.filmList = filmList;
-      this.loading = false;
-    })
+    this.filmCardService.getFilms(this.filmName).subscribe(
+      filmList => {this.filmList = filmList;},
+      err => { console.log(err); },
+      () => { this.loading = false; })
   }
 
   private addFilms() {
     this.loading = true;
     if (!this.filmName) { return; }
-    this.filmCardService.getPageFilms(this.filmName).subscribe(filmList => {
-      this.filmList = this.filmList.concat(filmList);
-      this.loading = false;
-    })
+    this.filmCardService.getPageFilms(this.filmName).subscribe(
+      filmList => { this.filmList = this.filmList.concat(filmList); },
+      err => { console.log(err); },
+      () => { this.loading = false; })
   }
 }
 
