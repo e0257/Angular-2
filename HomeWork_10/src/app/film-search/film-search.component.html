@@ -1,9 +1,17 @@
 <md-input-container>
-      <input mdInput placeholder="Film name" [(ngModel)]='search'>
+      <input mdInput placeholder="Film name" [(ngModel)]="search" 
+      (keyup.enter)="searchFilm()" [mdAutocomplete]="auto" [formControl]="control">
 </md-input-container>
+
+
+<md-autocomplete #auto="mdAutocomplete">
+      <md-option *ngFor="let film of listFilmsAuto" [value]="film.Title">
+            {{ film.Title}}
+      </md-option>
+</md-autocomplete>
 <button md-button (click)='searchFilm()'>Search</button>
 
-<md-select placeholder="View" [(ngModel)]="view" name="view" (change)='selectView()'>
+<md-select placeholder="View" [(ngModel)]="viewCard" name="view" (change)='selectView()'>
       <md-option [value]="'View 1'">view 1</md-option>
       <md-option [value]="'View 2'">view 2</md-option>
 </md-select>
