@@ -1,0 +1,121 @@
+.film-card_h{
+    width: 500px;
+    height: 300px;
+    border: 1px black solid;
+    border-radius: 2px;
+    box-sizing: border-box;
+    margin: 10px 10px 10px 0;
+    display:flex;
+    justify-content: space-between;
+    font-size: 12px;
+    overflow: hidden;
+}
+
+.film-card_v{
+    width: 300px;
+    height: 400px;
+    border: 1px black solid;
+    border-radius: 2px;
+    box-sizing: border-box;
+    margin: 10px;
+    overflow: hidden;
+}
+
+img.img_h{
+  max-width: 250px;
+  min-width: 250px;
+  height: 300px;
+}
+
+img.img_v{
+  width: 300px;
+  max-height: 350px;
+  min-height: 350px;
+}
+
+.content_v{
+    padding: 2px;
+    height: 50px;
+}
+
+.content_h{
+  width: 250px;
+  padding: 2px;
+  box-sizing: border-box;
+}
+
+.title_v{
+  max-width: 245px;
+  padding-left: 2px;
+  height: 25px;
+  font-size: 16px;
+  display: inline-block;
+  overflow: hidden; 
+}
+.title_h{
+  max-width: 235px;
+  padding-left: 2px;
+  height: 25px;
+  font-size: 16px;
+  display: inline-block;
+  overflow: hidden;
+}
+.genre_v{
+  max-width: 245px;
+  padding-left: 2px;
+  height: 25px;
+  font-size: 16px;
+  display: inline-block;
+  overflow: hidden;
+  color: grey;
+}
+
+.genre_h{
+  max-width: 235px;
+  padding-left: 2px;
+  height: 25px;
+  font-size: 16px;
+  display: inline-block;
+  overflow: hidden;
+  color: grey;
+}
+
+.marks_v{
+  display: inline-block;
+  max-width: 50px;
+  height: 25px;
+  float:right;
+}
+
+.marks_h{
+  display: inline-block;
+  max-width: 50px;
+  height: 25px;
+  float:right;
+}
+.year_v{
+   display: inline-block;
+  max-width: 50px;
+  height: 25px;
+  float:right;
+}
+.year_h{
+   display: inline-block;
+  max-width: 50px;
+  height: 25px;
+  float: right;
+}
+
+.overview{
+  height: 200px;
+}
+
+.more{
+  height: 40px;
+  text-align: center;
+  padding-top: 5px;
+}
+
+.clear{
+  clear: both;
+}

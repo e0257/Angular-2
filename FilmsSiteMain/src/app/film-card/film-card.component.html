@@ -1,0 +1,46 @@
+<div class="film-card_v" *ngIf="filmService.viewOfFilms === 'V'&& isLoad">
+	<a id = "{{filmDetail.id}}" href="/film/{{filmDetail.id}}"  title="{{filmDetail.title}}" >
+		<img class="img_v" src="{{imgUrl + filmDetail.poster_path}}">
+	</a>
+	<div class="content_v">
+		<div class="title_v">
+			{{truncString(filmDetail.title, 28)}}
+		</div>
+		<div class="marks_v">
+			{{filmDetail.vote_average}}/10
+		</div>
+		<div class="clear"></div>
+		<div class="genre_v">
+			<i>{{truncString(genresOfFilm(), 28)}}</i>
+		</div>
+		<div class="year_v">
+			{{filmDetail.release_date.slice(0,4)}}
+		</div>
+	</div>
+</div>
+
+<div class="film-card_h" *ngIf="filmService.viewOfFilms === 'H'&& isLoad">
+	<a id = "{{filmDetail.id}}" href="/film/{{filmDetail.id}}" title="{{filmDetail.title}}" >
+		<img class="img_h" src="{{imgUrl + filmDetail.poster_path}}">
+	</a>
+	<div class="content_h">
+		<b><div class="title_h">
+			{{truncString(filmDetail.title, 23)}}
+		</div></b>
+		<div class="marks_h">
+			{{filmDetail.vote_average}}/10
+		</div>
+		<div class="clear"></div>
+		<div class="genre_h">
+			<i>{{truncString(genresOfFilm(), 23)}}</i>
+		</div>
+		<div class="year_h">
+			{{filmDetail.release_date.slice(0,4)}}
+		</div>
+		<div class="clear"></div>
+		<div class ="overview"> {{truncString(filmDetail.overview, 500)}}</div>
+		<div class = "more">
+			<a href="/film/{{filmDetail.id}}" class="btn btn-default"> Подробнее</a>
+		</div>
+	</div>
+</div>

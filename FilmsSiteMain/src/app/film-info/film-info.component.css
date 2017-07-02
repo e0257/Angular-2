@@ -1,0 +1,96 @@
+
+.film-detail{
+    display: flex;
+    padding-top: 10px;
+    
+}
+
+img.poster{
+  max-width: 300px;
+  min-width: 300px;
+  height: 450px;
+  margin-right: 20px;
+  border-radius: 15px;
+}
+
+.content{
+    color: white;
+  width: 600px;
+  box-sizing: border-box;
+  border: 1px solid black;
+  display: flex;
+ flex-direction: column;
+ 
+}
+
+.title{
+  padding: 4px;
+  min-height: 30px;
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+.genre{
+    padding-left: 5px;
+    margin-bottom: 5px;
+}
+
+.overview{
+    margin: 5px;
+}
+
+.statistics{
+    height: 50px;
+    padding-left: 5px;
+    padding-right: 10px;
+    display: flex;
+    justify-content: space-between
+}
+
+.actors{
+    max-width: 70%;
+    max-height: 190px;
+  border: 1px black solid;
+  margin-top:20px;
+  display: flex;
+  flex-wrap: wrap;
+  overflow-y: scroll;
+}
+
+.actor-card{
+    height: 180px;
+    width: 100px;
+    margin: 5px 5px;
+    
+  border: 1px solid black;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.actor-card> img{
+    background: white;
+    position: relative;
+    top:-1px;
+    left: -1px;
+    height: 150px;
+    width: 100px;
+    border-top-right-radius:inherit;
+    border-top-left-radius:inherit;
+}
+
+.actor-card >.name{
+    
+    color: white;
+    font-size: 12px;
+    text-align: center;
+    padding: 2px 2px 0 2px;
+}
+
+.favorites, .marks{
+    display: inline-block;
+}
+
+.favorites>input{
+    position: relative;
+    top:3px !important;
+}
