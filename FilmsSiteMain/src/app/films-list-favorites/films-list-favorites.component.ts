@@ -58,4 +58,5 @@ export class FilmsListFavoritesComponent implements OnInit {
       err => { console.log(err); },
       () => { })
   }
+
 }

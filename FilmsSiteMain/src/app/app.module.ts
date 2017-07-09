@@ -13,6 +13,7 @@ import { FilmInfoComponent } from './film-info/film-info.component';
 import { FilmService } from './services/film.service';
 import { ExtraService } from './services/extra.service';
 import { FilmsListFavoritesComponent } from './films-list-favorites/films-list-favorites.component';
+import { SearchComponent } from './search/search.component';
 
 const routes: Routes = [
   {
@@ -43,7 +44,8 @@ const routes: Routes = [
     FilmCardComponent,
     FilmListComponent,
     FilmInfoComponent,
-    FilmsListFavoritesComponent
+    FilmsListFavoritesComponent,
+    SearchComponent
   ],
   imports: [
     BsDropdownModule.forRoot(),

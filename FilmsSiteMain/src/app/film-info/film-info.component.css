@@ -62,7 +62,7 @@ img.poster{
     width: 100px;
     margin: 5px 5px;
     
-  border: 1px solid black;
+  border: 1px solid grey;
   border-radius: 5px;
   box-sizing: border-box;
 }

@@ -1,7 +1,7 @@
-<div class="film-detail"> 
+<div *ngIf = "filmDetail" class="film-detail" > 
   <img class="poster" src="{{imgUrl + filmDetail.poster_path}}" title="{{filmDetail.title}}">
 
-  <div class="content">
+  <div class="content" >
       <div class="title">
         <b>{{filmDetail.title}} ({{filmDetail.release_date.slice(0,4)}})</b>
 		  </div>

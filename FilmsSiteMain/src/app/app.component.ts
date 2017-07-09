@@ -8,33 +8,14 @@ import { ExtraService } from './services/extra.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit,AfterContentInit {
-  viewOfFilms: string = "V";
-  searchValue: string;
+export class AppComponent implements OnInit {
 
-  @ViewChild(FilmListComponent)
-  filmListComponent: FilmListComponent;
 
   constructor(private filmService: FilmService,
               private extraService: ExtraService) { }
 
-ngAfterContentInit() {
-    console.log(this.filmListComponent);
-  }
-
 ngOnInit(){
-  this.setView();
-}
-
-setView(){
-  this.filmService.viewOfFilms = this.viewOfFilms;
-}
-
-
-
-searchFilm() {
-  console.log(this.filmListComponent);
-    setTimeout(this.filmListComponent.getFilmsByQuery(this.searchValue),5000);
+  
 }
   links = [
     { path: '', icon: 'glyphicon glyphicon-home', label: 'Главная' },

@@ -17,7 +17,7 @@ export class FilmInfoComponent implements OnInit {
   isFavorite: boolean;
   filmId: number;
     constructor(private activateRoute: ActivatedRoute,
-                private filmService: FilmService){     
+                private filmService: FilmService){
         this.filmId = activateRoute.snapshot.params['id'];
     }
 
@@ -26,12 +26,12 @@ export class FilmInfoComponent implements OnInit {
       this.filmService.searchMenu = false;
       this.getFilmById(this.filmId);
       this.getActors(this.filmId);
-      
 
   }
 
 toFavorite(){
-  let film = {filmId: this.filmId, status: this.inFavorite }
+  let film = {filmId: this.filmId, status: this.isFavorite }
+  console.log(this.isFavorite);
   this.filmService.saveFavoriteItem(film).subscribe(data => {
         console.log(data);
         console.log("favorite");
@@ -50,6 +50,8 @@ inFavorite(){
       filmDetail => {this.filmDetail = filmDetail;
         this.backgroundUrl = this.imgUrl.slice(0,-1)+filmDetail.backdrop_path;
         document.body.style.background = " url(' "+this.backgroundUrl+"') no-repeat";
+        document.body.style.backgroundAttachment = 'fixed';
+        //document.body.style.filter = " url(' "+this.backgroundUrl+"')#greyscale";
         document.body.style.backgroundSize="cover";
 
       console.log(filmDetail);
@@ -69,6 +71,5 @@ inFavorite(){
   getGenres(){
     return this.filmDetail.genres.map(e => e.name).join(",")||"";
   }
-
 
 }

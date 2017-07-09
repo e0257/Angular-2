@@ -30,28 +30,34 @@
       },
 
       saveFavoriteItem: function(req, res) {
-        var item = new FavoriteItemModel(req.body);
+        //var item = new FavoriteItemModel(req.body);
 
-        /*console.log(req.body);
-        console.log(item);
+        console.log(req.body);
+        /*console.log(item);
         return res.send({ status: 'OK', item: item });*/
 
 // Find the document
-/*
-FavoriteItemModel.findOneAndUpdate({filmId: req.body.filmId}, {status: req.body.status}, 
-{ upsert: true, new: true, setDefaultsOnInsert: true },
- function(error, result) {
-    if (!err) {
-                console.log("Favorites item is created");
-                return res.send({ status: 'OK', item: item });
+
+FavoriteItemModel.findOneAndUpdate(
+    {filmId: req.body.filmId}, 
+    {$set:{status: req.body.status}}, 
+    {upsert: true, new: true, setDefaultsOnInsert: true },
+    function(err) {
+            if (!err) {
+                console.log("Favorites item is updated");
+                return res.send({ status: 'OK' });
             } else {
-                res.statusCode = 500;
+                /*new FavoriteItemModel(req.body).save(function (err) {if (!err) {
+                console.log("Favorites item is created");
+                return res.send({ status: 'OK' });
+                 }});*/
+               /* res.statusCode = 500;
                 res.send({ error: 'Server error' });
-                log.error('Internal error(%d): %s',res.statusCode,err.message);
+                log.error('Internal error(%d): %s',res.statusCode,err.message);*/
             }
-        });*/
+        });
         
-        item.save(function (err) {
+       /* item.save(function (err) {
             if (!err) {
                 console.log("Favorites item is created");
                 return res.send({ status: 'OK', item: item });
@@ -60,7 +66,7 @@ FavoriteItemModel.findOneAndUpdate({filmId: req.body.filmId}, {status: req.body.
                 res.send({ error: 'Server error' });
                 log.error('Internal error(%d): %s',res.statusCode,err.message);
             }
-        });
+        });*/
  
         }
       }

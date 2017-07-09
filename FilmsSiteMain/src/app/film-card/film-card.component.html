@@ -1,5 +1,5 @@
-<div class="film-card_v" *ngIf="filmService.viewOfFilms === 'V'&& isLoad">
-	<a id = "{{filmDetail.id}}" href="/film/{{filmDetail.id}}"  title="{{filmDetail.title}}" >
+<div class="film-card_v" *ngIf="filmDetail&&filmService.viewOfFilms === 'V'">
+	<a id = "{{filmDetail.id}}" routerLink="/film/{{filmDetail.id}}"  title="{{filmDetail.title}}" >
 		<img class="img_v" src="{{imgUrl + filmDetail.poster_path}}">
 	</a>
 	<div class="content_v">
@@ -19,8 +19,8 @@
 	</div>
 </div>
 
-<div class="film-card_h" *ngIf="filmService.viewOfFilms === 'H'&& isLoad">
-	<a id = "{{filmDetail.id}}" href="/film/{{filmDetail.id}}" title="{{filmDetail.title}}" >
+<div class="film-card_h" *ngIf="filmDetail&&filmService.viewOfFilms === 'H'">
+	<a id = "{{filmDetail.id}}" routerLink="/film/{{filmDetail.id}}" title="{{filmDetail.title}}" >
 		<img class="img_h" src="{{imgUrl + filmDetail.poster_path}}">
 	</a>
 	<div class="content_h">
@@ -40,7 +40,7 @@
 		<div class="clear"></div>
 		<div class ="overview"> {{truncString(filmDetail.overview, 500)}}</div>
 		<div class = "more">
-			<a href="/film/{{filmDetail.id}}" class="btn btn-default"> Подробнее</a>
+			<a routerLink="/film/{{filmDetail.id}}" class="btn btn-default"> Подробнее</a>
 		</div>
 	</div>
 </div>

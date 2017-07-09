@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, AfterContentInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { FilmService } from '../services/film.service';
 
 @Component({
@@ -10,9 +10,7 @@ export class FilmCardComponent implements OnInit {
 
   constructor(private filmService: FilmService) { }
 
-  imgUrl = this.filmService.imgURL;
-  isLoad = false;
-  
+  imgUrl = this.filmService.imgURL; 
 
   @Input() 
   filmDetail;
@@ -20,25 +18,25 @@ export class FilmCardComponent implements OnInit {
   @Input() 
   genreList;
 
-   ngOnInit() {
-    console.log(this.filmDetail);
+   ngOnInit() {   
   }
-
-  ngAfterContentInit(){ this.isLoad = true}
 
   truncString(str, maxlength) {
     return (str.length > maxlength) ? str.slice(0, maxlength - 3) + '...' : str;
   }
 
   genresOfFilm(){
-      return this.filmDetail.genres
-                ?this.filmDetail.genres
+      if (this.filmDetail.genres){
+               return  this.filmDetail.genres
                   .map(e => e.name)
                   .join(',')
-                :this.genreList
+      }
+      else if (this.filmDetail.genre_ids) {
+              return this.genreList
                   .filter( e => this.filmDetail.genre_ids.includes(e.id))
                   .map(e => e.name)
                   .join(',');
+      }
   }
  
  
