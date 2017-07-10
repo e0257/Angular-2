@@ -1,0 +1,28 @@
+<div class="login-form">
+<p>Введите данные:</p>
+  <form  #loginForm="ngForm">
+    <div class="fild">
+      <label for="email">Email:</label><br>
+      <input type="email" name="email" id="email"
+              required [(ngModel)]="email" #emailCheck="ngModel" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
+      >
+      <div [hidden]="emailCheck.valid || emailCheck.pristine"
+        class="error-message">
+        Email is not valid
+      </div>
+    </div>
+
+    <div class="fild">
+    <label for="pass" >Пароль:</label><br>
+    <input type="password" name="pass" id="pass"
+              required [(ngModel)]="password" #pasCheck="ngModel" pattern=".{6,}" ><br>
+    <div [hidden]="pasCheck.valid || pasCheck.pristine"
+			      class="error-message">
+		          Password is too short
+		</div>
+    </div>
+    <button type="submit" [disabled]="!loginForm.form.valid" routerLink="/charge">Вход</button>
+     
+  </form>
+
+</div>
