@@ -22,12 +22,12 @@
       <input type="number" name="sum" id="sum"  min="0" pattern="\d{1,5}"
             required [(ngModel)]="sum" class="short" #sumCheck="ngModel" >
       <div [hidden]="sumCheck.valid || sumCheck.pristine" class="error-message">
-        Sum is required
+        Sum is not valid
       </div>
     </div>
 
     <div class="fild">
-      <span class="label"><label for="card">Номер карты:</label></span>
+      <span class="label"><label for="card">Номер и срок действия карты:</label></span>
       <input type="number" name="card" id="card" required [(ngModel)]="card" #cardCheck="ngModel" 
             pattern="\d{16}" >
       <select  name="month" id="month" [(ngModel)]="selectMonth" #monthCheck="ngModel" required >
@@ -38,7 +38,7 @@
       </select>
       
       <div [hidden]="cardCheck.valid || cardCheck.pristine ||monthCheck.valid||yearCheck.valid" class="error-message">
-        Card  is required
+        Card number is not valid
       </div>
       
     </div>
@@ -48,7 +48,7 @@
       <input type="number" name="cvs" id="cvs" required [(ngModel)]="cvs" #cvsCheck="ngModel" 
             class="short" pattern="\d{3}">
       <div [hidden]="cvsCheck.valid || cvsCheck.pristine" class="error-message">
-        CVS  is required
+        CVS is not valid
       </div>
     </div>
 
