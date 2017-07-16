@@ -3,8 +3,8 @@ import { FilmService } from '../services/film.service';
 
 @Component({
   selector: 'film-list',
-  templateUrl: './film-list.component.html',
-  styleUrls: ['./film-list.component.css']
+  templateUrl: '../shared/film-list.component.html',
+  styleUrls: ['../shared/film-list.component.css']
 })
 export class FilmListComponent implements OnInit {
 
@@ -15,6 +15,7 @@ export class FilmListComponent implements OnInit {
 
   
   ngOnInit() {
+      document.body.style.background = "#dbd5f4";
       this.filmService.searchMenu = true;
       this.getPopularFilms();
       this.getGenres();
@@ -23,7 +24,9 @@ export class FilmListComponent implements OnInit {
   getPopularFilms(){
     this.filmService.getPopularFilms().subscribe(
       filmList => {this.filmList = filmList;
-      console.log(filmList)},
+      console.log(filmList);
+      this.checkCountsOfFilms(); //For correct grid visible
+    },
       err => { console.log(err); },
       () => {  }) 
   }
@@ -36,12 +39,20 @@ export class FilmListComponent implements OnInit {
       () => {  }) 
   }
 
-  getFilmsByQuery(serchFilm){
-      this.filmService.getFilms(serchFilm).subscribe(
+  getFilmsByQuery(searchFilm){
+      this.filmService.getFilms(searchFilm).subscribe(
       filmList => {this.filmList = filmList;
       console.log(filmList)},
       err => { console.log(err); },
       () => {  })
+  }
+ //For correct grid visible
+  checkCountsOfFilms(){
+    if (this.filmList.length%3 == 2) { 
+      console.log(this.filmList);
+      this.filmList.push({});
+      console.log(this.filmList);
+    }
   }
 
 }

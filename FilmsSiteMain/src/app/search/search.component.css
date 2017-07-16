@@ -3,9 +3,9 @@
 }
 
 
-.container{
-    max-width: 1020px;
-    padding: 0;
+.search-container{
+    max-width: 1000px;
+    padding: 10px 0px 5px 0px;
 }
 
 .search-group{
@@ -16,4 +16,19 @@
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+}
+
+input#search{
+    margin-right: 5px;
+}
+
+dataset{
+    font-size: 20px;
+}
+
+@media screen and (max-width: 600px) {
+    .search-container{
+        padding: 10px 2px 5px 2px;
+    }
+    
 }

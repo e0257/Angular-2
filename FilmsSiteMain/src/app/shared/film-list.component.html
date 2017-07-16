@@ -1,0 +1,6 @@
+<search (searchEv)='getFilmsByQuery($event)'></search>
+<div class="film-list">
+<film-card *ngFor="let film of filmList" [filmDetail]="film" [ngClass]="{visible: !film.title}" [genreList]="genreList" ></film-card>
+  <div class="noFilms" *ngIf="filmList.length == 0">Фильмов по запросу не найдено</div>
+
+</div>

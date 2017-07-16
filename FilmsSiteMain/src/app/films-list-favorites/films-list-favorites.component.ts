@@ -3,8 +3,8 @@ import { FilmService } from '../services/film.service';
 
 @Component({
   selector: 'app-films-list-favorites',
-  templateUrl: './films-list-favorites.component.html',
-  styleUrls: ['./films-list-favorites.component.css']
+  templateUrl: '../shared/film-list.component.html',
+  styleUrls: ['../shared/film-list.component.css']
 })
 export class FilmsListFavoritesComponent implements OnInit {
 
@@ -13,6 +13,7 @@ export class FilmsListFavoritesComponent implements OnInit {
   genreList = [];
 
   ngOnInit() {
+    document.body.style.background = "#dbd5f4";
     this.filmService.searchMenu = true;
     this.getFavoritesFilms();
     this.getGenres();
@@ -20,7 +21,7 @@ export class FilmsListFavoritesComponent implements OnInit {
 
   getFavoritesFilms() {
     this.filmService.getFavoritesItem().subscribe(
-      favorites => {//this.filmList = filmList;
+      favorites => {
         
           favorites.forEach(filmItem => {
           if(filmItem.status) {
@@ -29,14 +30,13 @@ export class FilmsListFavoritesComponent implements OnInit {
               this.filmList.push(film);
               console.log(film);
             },
-            err => { console.log(err); },
+            err => { console.log(err); }
             )}
         });
-        
         console.log(favorites)
       },
       err => { console.log(err); },
-      () => { })
+      () => {        })
   }
 
   getGenres() {

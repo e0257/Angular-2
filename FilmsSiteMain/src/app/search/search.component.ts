@@ -10,6 +10,7 @@ import { FilmService } from '../services/film.service';
 export class SearchComponent implements OnInit {
   viewOfFilms: string = "V";
   searchValue: string;
+  autocompleteValues: Array<string>;
 
   @Output()
   searchEv = new EventEmitter();
@@ -26,6 +27,19 @@ setView(){
 
 searchFilm() {
     this.searchEv.emit(this.searchValue);
+  }
+
+autocomplete(){
+      if(!this.searchValue) return;
+      this.filmService.getFilms(this.searchValue).subscribe(
+          filmList => {
+            this.autocompleteValues = filmList
+                                      .map(e => e.title)
+                                      .filter((e,i)=>i<6);
+          },
+          err => { console.log(err); },
+          () => {  }
+      );
   }
 
 }

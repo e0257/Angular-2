@@ -1,8 +1,10 @@
+.background{
+         background-image: linear-gradient(rgba(66, 69, 73,.7), rgba(255,245,215,.5))
+}
 
 .film-detail{
     display: flex;
-    padding-top: 10px;
-    
+    padding-top: 10px;  
 }
 
 img.poster{
@@ -10,14 +12,16 @@ img.poster{
   min-width: 300px;
   height: 450px;
   margin-right: 20px;
+  margin-left: 5px;
   border-radius: 15px;
+  flex-grow:1;
 }
 
 .content{
     color: white;
-  width: 600px;
+  max-width: 680px;
   box-sizing: border-box;
-  border: 1px solid black;
+flex-grow:2;
   display: flex;
  flex-direction: column;
  
@@ -32,6 +36,12 @@ img.poster{
 
 .genre{
     padding-left: 5px;
+    margin-bottom: 10px;
+}
+
+.original{
+     min-height: 20px;
+    padding-left: 5px;
     margin-bottom: 5px;
 }
 
@@ -40,31 +50,64 @@ img.poster{
 }
 
 .statistics{
-    height: 50px;
+    min-height: 20px;
     padding-left: 5px;
     padding-right: 10px;
     display: flex;
-    justify-content: space-between
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+.runtime{
+    height: 20px;
+    padding-left: 5px;
+    margin-bottom: 10px;
+}
+
+
+
+input[type="checkbox"] {
+    display:none;
+}
+.favorites > label{
+    cursor: pointer;
 }
 
 .actors{
-    max-width: 70%;
-    max-height: 190px;
-  border: 1px black solid;
-  margin-top:20px;
+    max-width: 100%;
+    max-height: 285px;
   display: flex;
   flex-wrap: wrap;
   overflow-y: scroll;
+  
 }
 
+
+::-webkit-scrollbar-thumb {
+    background: grey; 
+    border-radius: 5px;
+}
+::-webkit-scrollbar {
+    width: 10px;
+    background-color:rgba(66, 69, 73,.6);
+    border-radius: 5px;
+}
+
+.actor-title{
+    margin: 20px  0 5px 15px;
+    font-size: 20px;
+    color: white;
+}
 .actor-card{
-    height: 180px;
-    width: 100px;
+    background: lightyellow;
+    height: 270px;
+    width: 180px;
     margin: 5px 5px;
     
   border: 1px solid grey;
   border-radius: 5px;
   box-sizing: border-box;
+
 }
 
 .actor-card> img{
@@ -72,25 +115,40 @@ img.poster{
     position: relative;
     top:-1px;
     left: -1px;
-    height: 150px;
-    width: 100px;
+    height: 250px;
+    width: 180px;
     border-top-right-radius:inherit;
     border-top-left-radius:inherit;
 }
 
 .actor-card >.name{
     
-    color: white;
+    color: grey;
     font-size: 12px;
     text-align: center;
     padding: 2px 2px 0 2px;
 }
 
 .favorites, .marks{
+    font-family: 'Comic Sans MS';
     display: inline-block;
 }
 
 .favorites>input{
     position: relative;
     top:3px !important;
+}
+
+
+@media screen and (max-width: 600px) {
+    .film-detail{
+        flex-wrap: wrap; 
+        justify-content: center;
+    }
+    img.poster{
+        margin: 0;
+    }
+.actors{
+    justify-content: center;
+}
 }

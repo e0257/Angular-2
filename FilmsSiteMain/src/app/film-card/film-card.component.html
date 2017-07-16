@@ -4,7 +4,7 @@
 	</a>
 	<div class="content_v">
 		<div class="title_v">
-			{{truncString(filmDetail.title, 28)}}
+			<b>{{truncString(filmDetail.title, 26)}}</b>
 		</div>
 		<div class="marks_v">
 			{{filmDetail.vote_average}}/10
@@ -25,14 +25,14 @@
 	</a>
 	<div class="content_h">
 		<b><div class="title_h">
-			{{truncString(filmDetail.title, 23)}}
+			{{truncString(filmDetail.title, 21)}}
 		</div></b>
 		<div class="marks_h">
 			{{filmDetail.vote_average}}/10
 		</div>
 		<div class="clear"></div>
 		<div class="genre_h">
-			<i>{{truncString(genresOfFilm(), 23)}}</i>
+			<i>{{truncString(genresOfFilm(), 22)}}</i>
 		</div>
 		<div class="year_h">
 			{{filmDetail.release_date.slice(0,4)}}

@@ -1,7 +1,6 @@
 import { Component, OnInit, ViewChild, AfterContentInit } from '@angular/core';
 import { FilmListComponent } from './film-list/film-list.component';
 import { FilmService } from './services/film.service';
-import { ExtraService } from './services/extra.service';
 
 @Component({
   selector: 'app-root',
@@ -11,8 +10,7 @@ import { ExtraService } from './services/extra.service';
 export class AppComponent implements OnInit {
 
 
-  constructor(private filmService: FilmService,
-              private extraService: ExtraService) { }
+  constructor(private filmService: FilmService) { }
 
 ngOnInit(){
   

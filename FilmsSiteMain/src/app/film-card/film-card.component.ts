@@ -18,7 +18,8 @@ export class FilmCardComponent implements OnInit {
   @Input() 
   genreList;
 
-   ngOnInit() {   
+   ngOnInit() {  
+     
   }
 
   truncString(str, maxlength) {

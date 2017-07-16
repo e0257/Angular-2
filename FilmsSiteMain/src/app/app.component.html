@@ -2,13 +2,13 @@
   <div class="container">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+      <button type="button" dropdownToggle  class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
       </button>
-      <span class="navbar-brand">YBFilms</span>
+      <span class="navbar-brand" routerLink="/">YBFilms</span>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -33,4 +33,9 @@
   <router-outlet></router-outlet>
 </div>
 
-<footer></footer>
+<div class="container text-center">
+    <footer>
+      <hr>
+      &copy; YBFilms
+    </footer>
+</div>

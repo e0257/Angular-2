@@ -1,32 +1,46 @@
-<div *ngIf = "filmDetail" class="film-detail" > 
-  <img class="poster" src="{{imgUrl + filmDetail.poster_path}}" title="{{filmDetail.title}}">
+<div class="background">
+  <div *ngIf="filmDetail" class="film-detail">
+    <img class="poster" src="{{imgUrl + filmDetail.poster_path}}" title="{{filmDetail.title}}">
 
-  <div class="content" >
+    <div class="content">
       <div class="title">
         <b>{{filmDetail.title}} ({{filmDetail.release_date.slice(0,4)}})</b>
-		  </div>
-      <div class="genre">
-          <i>{{getGenres()}}</i>
       </div>
-    <div class = "statistics">
-        <!--{{backgroundUrl}}-->
+
+      <div class="genre">
+        <b>Жанр: </b><i>{{getGenres()}}</i>
+      </div>
+
+      <div class="original">
+          <b>Оригинальное название: </b>'{{filmDetail.original_title}}'
+      </div>
+
+      <div class="statistics">
         <div class="marks">
-			      {{filmDetail.vote_average}}/10
-		    </div>
-        <div class="favorites">
-            <label for='favorites' *ngIf="!isFavorite"> Добавить в избранное</label>
-            <label for='favorites' *ngIf="isFavorite"> Убрать из избранного</label>
-            <input type ="checkbox" class="inline" id="favorites" [(ngModel)]="isFavorite" (change) = "toFavorite()">
+          <b>Рейтинг: </b>{{filmDetail.vote_average}}/10
         </div>
+        <div class="favorites">
+          <label for='favorites' *ngIf="!isFavorite"> Добавить в избранное</label>
+          <label for='favorites' *ngIf="isFavorite"> Убрать из избранного</label>
+          <input type="checkbox" class="inline" id="favorites" [(ngModel)]="isFavorite" (change)="toFavorite()">
+        </div>
+      </div>
+
+      <div class="runtime">
+          <b>Продолжительность: </b>{{filmDetail.runtime}} мин.
+      </div>
+
+      <div class="overview">
+        <p>{{filmDetail.overview}}<p>
+      </div>
 
     </div>
-    <div class ="overview"> 
-      <p>{{filmDetail.overview}}<p></div>
+  </div>
+  <label class="actor-title" for = "actors"> Актерский состав:</label>
+  <div id ="actors" class="actors">
+    <div class='actor-card' *ngFor="let actor of actorsList">
+      <img src="{{imgUrl + actor.profile_path}}">
+      <div class="name"><b>{{actor.name}}</b></div>
     </div>
-</div>
-<div class="actors">
-  <div class='actor-card' *ngFor = "let actor of actorsList">
-    <img src="{{imgUrl + actor.profile_path}}">
-    <div class="name"><b>{{actor.name}}</b></div> 
   </div>
 </div>

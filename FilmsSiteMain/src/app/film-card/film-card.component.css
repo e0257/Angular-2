@@ -1,24 +1,25 @@
 .film-card_h{
-    width: 500px;
+    width: 490px;
     height: 300px;
-    border: 1px grey solid;
+    /*border: 1px grey solid;*/
     border-radius: 5px;
-    box-sizing: border-box;
-    margin: 10px 10px 10px 0;
+    box-sizing:  border-box;
+    margin: 10px 0px;
     display:flex;
     justify-content: space-between;
     font-size: 12px;
     background-color: white;
-    box-shadow: 2px 2px 2px lightgrey;
+    box-shadow: 2px 2px 2px grey;
+    overflow: hidden;
 }
 
 .film-card_v{
     width: 300px;
     height: 400px;
-    border: 1px grey solid;
+    /*border: 1px grey solid;*/
     border-radius: 5px;
     box-sizing: border-box;
-    margin: 10px;
+    margin: 10px 0;
     background-color: white;
     box-shadow: 2px 2px 2px grey;
 }
@@ -29,16 +30,16 @@ img.img_h{
   height: 300px;
   border-top-left-radius:5px;
   border-bottom-left-radius:5px;
-  position: relative;
+  /*position: relative;
   top:-1px;
-  left: -1px;
+  left: -1px;*/
 }
 
 img.img_v{
   width: 300px;
-  position: relative;
+  /*position: relative;
   top:-1px;
-  left: -1px;
+  left: -1px;*/
   border-top-right-radius:5px;
   border-top-left-radius:5px;
   max-height: 350px;
@@ -46,20 +47,22 @@ img.img_v{
 }
 
 .content_v{
-    padding: 2px;
+    padding: 5px 2px 2px 2px;
     height: 50px;
+    
 }
 
 .content_h{
   width: 250px;
-  padding: 2px;
+  padding: 5px;
   box-sizing: border-box;
+  
 }
 
 .title_v{
   max-width: 245px;
   padding-left: 2px;
-  height: 25px;
+  height: 20px;
   font-size: 16px;
   display: inline-block;
   overflow: hidden; 
@@ -67,7 +70,7 @@ img.img_v{
 .title_h{
   max-width: 235px;
   padding-left: 2px;
-  height: 25px;
+  height: 20px;
   font-size: 16px;
   display: inline-block;
   overflow: hidden;
@@ -95,31 +98,36 @@ img.img_v{
 .marks_v{
   display: inline-block;
   max-width: 50px;
-  height: 25px;
+  height: 20px;
   float:right;
+  font-family: 'Comic Sans MS';
 }
 
 .marks_h{
   display: inline-block;
   max-width: 50px;
-  height: 25px;
+  height: 20px;
   float:right;
+  font-family: 'Comic Sans MS';
 }
 .year_v{
    display: inline-block;
   max-width: 50px;
   height: 25px;
+  font-family: 'Comic Sans MS';
   float:right;
 }
 .year_h{
    display: inline-block;
   max-width: 50px;
   height: 25px;
+  font-family: 'Comic Sans MS';
   float: right;
 }
 
 .overview{
-  height: 200px;
+  height: 195px;
+  color: #0f0509;
 }
 
 .more{
