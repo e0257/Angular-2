@@ -1,6 +1,6 @@
-<div class="film-card_v" *ngIf="filmDetail&&filmService.viewOfFilms === 'V'">
-	<a id = "{{filmDetail.id}}" routerLink="/film/{{filmDetail.id}}"  title="{{filmDetail.title}}" >
-		<img class="img_v" src="{{imgUrl + filmDetail.poster_path}}">
+<div class="film-card_v" *ngIf="filmDetail&&viewOfFilms === 'V'">
+	<a [id]="filmDetail.id" [routerLink]="'/film/'+filmDetail.id" [title]="filmDetail.title">
+		<img class="img_v" [src]="imgUrl + filmDetail.poster_path">
 	</a>
 	<div class="content_v">
 		<div class="title_v">
@@ -19,9 +19,9 @@
 	</div>
 </div>
 
-<div class="film-card_h" *ngIf="filmDetail&&filmService.viewOfFilms === 'H'">
-	<a id = "{{filmDetail.id}}" routerLink="/film/{{filmDetail.id}}" title="{{filmDetail.title}}" >
-		<img class="img_h" src="{{imgUrl + filmDetail.poster_path}}">
+<div class="film-card_h" *ngIf="filmDetail&&viewOfFilms === 'H'">
+	<a [id]="filmDetail.id" [routerLink]="'/film/'+filmDetail.id" [title]="filmDetail.title">
+		<img class="img_h" [src]="imgUrl + filmDetail.poster_path">
 	</a>
 	<div class="content_h">
 		<b><div class="title_h">
@@ -38,9 +38,9 @@
 			{{filmDetail.release_date.slice(0,4)}}
 		</div>
 		<div class="clear"></div>
-		<div class ="overview"> {{truncString(filmDetail.overview, 500)}}</div>
-		<div class = "more">
-			<a routerLink="/film/{{filmDetail.id}}" class="btn btn-default"> Подробнее</a>
+		<div class="overview"> {{truncString(filmDetail.overview, 500)}}</div>
+		<div class="more">
+			<a [routerLink]="'/film/'+filmDetail.id" class="btn btn-default"> Подробнее</a>
 		</div>
 	</div>
 </div>

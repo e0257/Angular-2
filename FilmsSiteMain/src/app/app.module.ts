@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
-import {Routes, RouterModule} from '@angular/router';
+import { Routes, RouterModule } from '@angular/router';
 import { BsDropdownModule } from 'ngx-bootstrap';
 
 import { AppComponent } from './app.component';
@@ -16,23 +16,23 @@ import { SearchComponent } from './search/search.component';
 
 const routes: Routes = [
   {
-    path:"",
+    path: "",
     component: FilmListComponent
   },
   {
-    path:"filmList",
+    path: "filmList",
     component: FilmListComponent
   },
   {
-    path:"favorites",
+    path: "favorites",
     component: FilmsListFavoritesComponent
   },
   {
-    path:"film/:id",
+    path: "film/:id",
     component: FilmInfoComponent
   },
   {
-    path:"**",
+    path: "**",
     redirectTo: '/'
   }
 ];

@@ -26,6 +26,18 @@ dataset{
     font-size: 20px;
 }
 
+.btn,.btn:active, .btn:focus,.btn:hover{
+    all: unset ;
+    padding: 0;
+    height: 28px;
+    width: 20px;
+    position: relative;
+    top:3px;
+    right: 36px;
+    border: none;
+    background: white;
+}
+
 @media screen and (max-width: 600px) {
     .search-container{
         padding: 10px 2px 5px 2px;

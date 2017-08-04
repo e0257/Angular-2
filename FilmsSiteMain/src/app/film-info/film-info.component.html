@@ -1,6 +1,6 @@
 <div class="background">
   <div *ngIf="filmDetail" class="film-detail">
-    <img class="poster" src="{{imgUrl + filmDetail.poster_path}}" title="{{filmDetail.title}}">
+    <img class="poster" [src]="imgUrl + filmDetail.poster_path" [title]="filmDetail.title">
 
     <div class="content">
       <div class="title">
@@ -12,7 +12,7 @@
       </div>
 
       <div class="original">
-          <b>Оригинальное название: </b>'{{filmDetail.original_title}}'
+        <b>Оригинальное название: </b>'{{filmDetail.original_title}}'
       </div>
 
       <div class="statistics">
@@ -27,19 +27,20 @@
       </div>
 
       <div class="runtime">
-          <b>Продолжительность: </b>{{filmDetail.runtime}} мин.
+        <b>Продолжительность: </b>{{filmDetail.runtime}} мин.
       </div>
 
       <div class="overview">
-        <p>{{filmDetail.overview}}<p>
+        <p>{{filmDetail.overview}}
+          <p>
       </div>
 
     </div>
   </div>
-  <label class="actor-title" for = "actors"> Актерский состав:</label>
-  <div id ="actors" class="actors">
+  <label class="actor-title" for="actors"> Актерский состав:</label>
+  <div id="actors" class="actors">
     <div class='actor-card' *ngFor="let actor of actorsList">
-      <img src="{{imgUrl + actor.profile_path}}">
+      <img [src]="chkActorsPath(actor.profile_path)">
       <div class="name"><b>{{actor.name}}</b></div>
     </div>
   </div>

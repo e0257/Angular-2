@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
+import { Film } from '../models/Ifilm';
 
 @Injectable()
 export class FilmService {
@@ -24,7 +25,7 @@ export class FilmService {
 
   getFilmById(filmId: number){
     return this.http.get('https://api.themoviedb.org/3/movie/'+ filmId+'?api_key='+this.apikey+'&language=ru-RU&page=1')
-    .map((r: Response) => r.json() || {});
+    .map((r: Response) => r.json() ||{});
   }
 
   getActors(filmId: number){
@@ -42,13 +43,22 @@ export class FilmService {
 
 /*add */
   getFavoritesItem () {
-    return this.http.get("http://localhost:4200/getFavoritesList").map(res => {
-      return res.json();
-    });
+    return this.http.get("http://localhost:4200/getFavoritesList")
+      .map(res => res.json())
+      .flatMap(
+        favorites => {
+          return Observable.forkJoin(
+            favorites.filter(film => film.status)
+                     .map(film => this.getFilmById(film.filmId))
+          )
+        }
+      )
+      ;
   }
 
   saveFavoriteItem (film) {
-    return this.http.post("http://localhost:4200/saveFavoriteItem", film).map(res => res.json());
+    return this.http.post("http://localhost:4200/saveFavoriteItem", film)
+    .map(res => res.json());
   }
 
    inFavorite(film) {

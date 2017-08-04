@@ -6,21 +6,27 @@ import { FilmService } from '../services/film.service';
   templateUrl: './film-card.component.html',
   styleUrls: ['./film-card.component.css']
 })
-export class FilmCardComponent implements OnInit {
+export class FilmCardComponent  {
 
-  constructor(private filmService: FilmService) { }
+  imgUrl: string; 
 
-  imgUrl = this.filmService.imgURL; 
+  constructor(private filmService: FilmService) { 
+    this.imgUrl = this.filmService.imgURL;
+  }
+
+ /* get viewOfFilms() {
+          return this.filmService.viewOfFilms;
+  }*/
+  
 
   @Input() 
   filmDetail;
 
   @Input() 
-  genreList;
+  viewOfFilms;
 
-   ngOnInit() {  
-     
-  }
+  @Input() 
+  genreList;
 
   truncString(str, maxlength) {
     return (str.length > maxlength) ? str.slice(0, maxlength - 3) + '...' : str;

@@ -7,17 +7,19 @@ import { FilmService } from './services/film.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit {
+export class AppComponent  {
 
+  dropdownMenu = false;
 
   constructor(private filmService: FilmService) { }
 
-ngOnInit(){
-  
-}
   links = [
     { path: '', icon: 'glyphicon glyphicon-home', label: 'Главная' },
     { path: '/filmList', icon: 'glyphicon glyphicon-film', label: 'Все фильмы' },
-    { path: '/favorites', icon: 'glyphicon glyphicon-user', label: 'Популярные' }
+    { path: '/favorites', icon: 'glyphicon glyphicon-user', label: 'Избранные' }
   ];
+
+  showMenu(){
+    this.dropdownMenu = !this.dropdownMenu;
+  }
 }

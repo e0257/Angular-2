@@ -15,13 +15,17 @@ export class SearchComponent implements OnInit {
   @Output()
   searchEv = new EventEmitter();
 
+  @Output()
+  viewEv = new EventEmitter();
+
   constructor(private filmService: FilmService) { }
 
   ngOnInit() {
     this.setView();
   }
 
-setView(){
+setView(){ 
+  this.viewEv.emit(this.viewOfFilms);
   this.filmService.viewOfFilms = this.viewOfFilms;
 }
 
@@ -30,8 +34,8 @@ searchFilm() {
   }
 
 autocomplete(){
-      if(!this.searchValue) return;
-      this.filmService.getFilms(this.searchValue).subscribe(
+      if(this.searchValue){
+        this.filmService.getFilms(this.searchValue).subscribe(
           filmList => {
             this.autocompleteValues = filmList
                                       .map(e => e.title)
@@ -39,7 +43,8 @@ autocomplete(){
           },
           err => { console.log(err); },
           () => {  }
-      );
+        );
+      }
   }
 
 }
