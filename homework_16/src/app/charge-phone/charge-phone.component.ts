@@ -1,6 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { InjectionToken, Inject } from '@angular/core';
 import { ERRORS } from '../errorMessages';
+import { AuthService } from '../auth-service.service';
+
 
 let appErrors = new InjectionToken('../errorMessages');
 
@@ -8,22 +10,32 @@ let appErrors = new InjectionToken('../errorMessages');
   selector: 'app-charge-phone',
   templateUrl: './charge-phone.component.html',
   styleUrls: ['./charge-phone.component.css'],
-  providers: [{provide: appErrors, useValue: ERRORS }]
+  providers: [{ provide: appErrors, useValue: ERRORS }]
 })
-export class ChargePhoneComponent {
+export class ChargePhoneComponent implements OnInit {
   phone: string;
   email: string;
   sum: number;
   cvs: number;
   card: number;
-  months = ["01", "02", "03","04","05","06","07","08","09","11","12"];
-  years = ["2017","2018", "2019","2020"]
-  selectMonth = this.months[0];
-  selectYear = this.years[0];
+  months: Array<string>;
+  years: Array<string>;
+  selectMonth: String;
+  selectYear: String;
   errMes: any;
 
-  
 
-  constructor(@Inject(appErrors) err: any){this.errMes = err; }
+
+  constructor( @Inject(appErrors) err: any,
+    private authService: AuthService) {
+    this.errMes = err;
+  }
+
+  ngOnInit() {
+    this.months = this.authService.months;
+    this.years = this.authService.years;
+    this.selectMonth = this.months[0];
+    this.selectYear = this.years[0];
+  }
 
 }

@@ -13,7 +13,6 @@ import { ChargePhoneComponent } from './charge-phone/charge-phone.component';
 import { SuccessChargePhoneComponent } from './success-charge-phone/success-charge-phone.component';
 import {AuthService} from './auth-service.service';
 
-
 const routes: Routes = [
     { path: "login",    component: LoginComponent },
     { path: "charge",   component: ChargePhoneComponent },
@@ -39,8 +38,6 @@ const routes: Routes = [
   providers: [AuthService],
   bootstrap: [AppComponent]
 })
-
-
 
 export class AppModule { 
 
