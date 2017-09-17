@@ -1,0 +1,61 @@
+<div class="charge-form">
+  <p>Введите данные:</p>
+  <form #chargeForm="ngForm">
+    <div class="fild">
+      <span class="label"><label for="phone">Телефон:</label></span>
+      <input type="tel" name="phone" id="phone" required [(ngModel)]="phone" #phoneCheck="ngModel" pattern="^((\+38)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$">
+      <div [hidden]="phoneCheck.valid || phoneCheck.pristine" class="error-message">
+        {{errMes.phone}}
+      </div>
+    </div>
+
+    <div class="fild">
+      <span class="label"><label for="email">Email:</label></span>
+      <input type="email" name="email" id="email" required [(ngModel)]="email" #emailCheck="ngModel" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$">
+      <div [hidden]="emailCheck.valid || emailCheck.pristine" class="error-message">
+        {{errMes.email}}
+      </div>
+    </div>
+
+    <div class="fild">
+      <span class="label"><label for="sum">Сумма:</label></span>
+      <input type="number" name="sum" id="sum"  min="0" pattern="\d{1,5}"
+            required [(ngModel)]="sum" class="short" #sumCheck="ngModel" >
+      <div [hidden]="sumCheck.valid || sumCheck.pristine" class="error-message">
+        {{errMes.sum}}
+      </div>
+    </div>
+
+    <div class="fild">
+      <span class="label"><label for="card">Номер и срок действия карты:</label></span>
+      <input type="number" name="card" id="card" required [(ngModel)]="card" #cardCheck="ngModel" 
+            pattern="\d{16}" >
+      <select  name="month" id="month" [(ngModel)]="selectMonth" #monthCheck="ngModel" required >
+          <option *ngFor="let month of months" value="month"
+          selected="selectedMonth == month">{{month}}</option>
+      </select>
+       <select  name="year" id="year" [(ngModel)]="selectYear" #yearCheck="ngModel" required >
+          <option *ngFor="let year of years" value="year">{{year}}</option>
+      </select>
+      
+      <div [hidden]="(cardCheck.valid || cardCheck.pristine) &&monthCheck.valid&&yearCheck.valid" class="error-message">
+        {{errMes.card}}
+      </div>
+      
+    </div>
+
+    <div class="fild">
+      <span class="labels"><label for="cvs">CVS:</label></span>
+      <input type="number" name="cvs" id="cvs" required [(ngModel)]="cvs" #cvsCheck="ngModel" 
+            class="short" pattern="\d{3}">
+      <div [hidden]="cvsCheck.valid || cvsCheck.pristine" class="error-message">
+        {{errMes.cvs}}
+      </div>
+    </div>
+
+
+    <button type="submit" [disabled]="!chargeForm.form.valid" routerLink="/success">Вход</button>
+
+  </form>
+
+</div>
