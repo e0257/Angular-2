@@ -1,0 +1,46 @@
+#search{
+    width:40vw;
+}
+
+
+.search-container{
+    max-width: 1000px;
+    padding: 10px 0px 5px 0px;
+}
+
+.search-group{
+    display: flex;
+}
+.search-view{
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+input#search{
+    margin-right: 5px;
+}
+
+dataset{
+    font-size: 20px;
+}
+
+.btn,.btn:active, .btn:focus,.btn:hover{
+    all: unset ;
+    padding: 0;
+    height: 28px;
+    width: 20px;
+    position: relative;
+    top:3px;
+    right: 36px;
+    border: none;
+    background: white;
+}
+
+@media screen and (max-width: 600px) {
+    .search-container{
+        padding: 10px 2px 5px 2px;
+    }
+    
+}

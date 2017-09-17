@@ -1,0 +1,20 @@
+<div class="search-container">
+  <form class="search-view">
+    <span class="search-group">
+              <input type="text" list="acFilms" class="form-control" placeholder="Search" id="search" [(ngModel)]="searchValue" 
+              (keyup.enter)="searchFilm()" autocomplete="off" (keyup)="autocomplete()" name="search">
+              <datalist name ="acFilms" id="acFilms">
+                <option *ngFor="let film of autocompleteValues" [value]="film" >  
+              </datalist>
+
+              <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-search" 
+               (click)="searchFilm()"></span></button>
+    </span>
+    <span class="view-group">
+            <select class="form-control" id="view" name="view" [(ngModel)]="viewOfFilms" (change)="setView()">
+              <option value="V" selected = "selected">Vertical</option>
+              <option value="H" >Horizontal</option>
+            </select>
+            </span>
+  </form>
+</div>

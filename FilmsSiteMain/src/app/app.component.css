@@ -1,0 +1,50 @@
+
+
+.container{
+    max-width: 1000px;
+    padding-right: 0;
+}
+
+.main-container{
+    padding: 0;
+    min-height: 800px;
+    margin-bottom: 20px;
+    max-width: 1000px
+}
+
+.navbar-brand{
+    padding-left: 0;
+}
+.navbar-brand:focus{     
+    padding-left: 0;
+}
+
+.navbar-text{
+    margin-right: 0;
+}
+
+.footer-text::before{
+    content: '\00A9';
+    width: 10px;
+    height: 10px;
+    margin-right: 5px;
+}
+
+.showMenu{
+    display: none;
+}
+
+@media  screen and (max-width: 768px) {
+    .showMenu{      
+    display: block;
+    text-align: center;
+    font-size: 18px;
+}
+.navbar-brand{
+    padding-left: 5px;
+}
+
+.navbar-toggle{
+    margin-right: 20px;
+}
+}

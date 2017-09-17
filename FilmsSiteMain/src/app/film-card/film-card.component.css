@@ -1,0 +1,141 @@
+.film-card_h{
+    width: 490px;
+    height: 300px;
+    border-radius: 5px;
+    box-sizing:  border-box;
+    margin: 10px 0px;
+    display:flex;
+    justify-content: space-between;
+    font-size: 12px;
+    background-color: white;
+    box-shadow: 2px 2px 2px grey;
+    overflow: hidden;
+}
+
+.film-card_v{
+    width: 300px;
+    height: 400px;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin: 10px 0;
+    background-color: white;
+    box-shadow: 2px 2px 2px grey;
+}
+
+img.img_h{
+  max-width: 250px;
+  min-width: 250px;
+  height: 300px;
+  border-top-left-radius:5px;
+  border-bottom-left-radius:5px;
+  /*position: relative;
+  top:-1px;
+  left: -1px;*/
+}
+
+img.img_v{
+  width: 300px;
+  /*position: relative;
+  top:-1px;
+  left: -1px;*/
+  border-top-right-radius:5px;
+  border-top-left-radius:5px;
+  max-height: 350px;
+  min-height: 350px;
+}
+
+.content_v{
+    padding: 5px 2px 2px 2px;
+    height: 50px;
+    
+}
+
+.content_h{
+  width: 250px;
+  padding: 5px;
+  box-sizing: border-box;
+  
+}
+
+.title_v{
+  max-width: 245px;
+  padding-left: 2px;
+  height: 20px;
+  font-size: 16px;
+  display: inline-block;
+  overflow: hidden; 
+}
+.title_h{
+  max-width: 235px;
+  padding-left: 2px;
+  height: 20px;
+  font-size: 16px;
+  display: inline-block;
+  overflow: hidden;
+}
+.genre_v{
+  max-width: 245px;
+  padding-left: 2px;
+  height: 25px;
+  font-size: 16px;
+  display: inline-block;
+  overflow: hidden;
+  color: grey;
+}
+
+.genre_h{
+  max-width: 235px;
+  padding-left: 2px;
+  height: 25px;
+  font-size: 16px;
+  display: inline-block;
+  overflow: hidden;
+  color: grey;
+}
+
+.marks_v{
+  display: inline-block;
+  max-width: 50px;
+  height: 20px;
+  float:right;
+  font-family: 'Comic Sans MS';
+}
+
+.marks_h{
+  display: inline-block;
+  max-width: 50px;
+  height: 20px;
+  float:right;
+  font-family: 'Comic Sans MS';
+}
+.year_v{
+   display: inline-block;
+  max-width: 50px;
+  height: 25px;
+  font-family: 'Comic Sans MS';
+  float:right;
+}
+.year_h{
+   display: inline-block;
+  max-width: 50px;
+  height: 25px;
+  font-family: 'Comic Sans MS';
+  float: right;
+}
+
+.overview{
+  height: 195px;
+  padding: 0 10px;
+  text-align: justify;
+  color: #0f0509;
+}
+
+.more{
+  height: 40px;
+  text-align: center;
+  padding-top: 5px;
+}
+
+.clear{
+  clear: both;
+}

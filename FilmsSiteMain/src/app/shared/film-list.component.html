@@ -1,0 +1,7 @@
+<search (searchEv)='getFilmsByQuery($event)' (viewEv)='changeView($event)'></search>
+<div class="film-list" onresize="checkCountsOfFilms()">
+  <film-card *ngFor="let film of filmList" [filmDetail]="film" [viewOfFilms]="viewOfFilms" [ngClass]="{visible: !film.title}" [genreList]="genreList"></film-card>
+  <div class="empty" *ngFor="let empty of emptyList"></div>
+  <div class="noFilms" *ngIf="filmList.length == 0">Фильмов по запросу не найдено</div>
+
+</div>
